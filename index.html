@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clínica de Estimulación Magnética Transcraneal en Tijuana</title>
+  <meta name="description" content="Información y atención administrativa para agendar citas y resolver dudas sobre nuestros servicios." />
+  <meta name="robots" content="index, follow" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background:#0b1220; color:#eaf0ff;}
+    .wrap { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
+    .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 24px; }
+    h1 { font-size: 32px; margin: 0 0 12px; }
+    p { line-height: 1.6; color: rgba(234,240,255,0.9); }
+    .cta { display:flex; gap:12px; flex-wrap: wrap; margin-top: 16px; }
+    a.btn { text-decoration:none; padding: 12px 16px; border-radius: 12px; font-weight: 600; display:inline-block; }
+    .primary { background:#4f8cff; color:#081022; }
+    .secondary { background:transparent; color:#eaf0ff; border:1px solid rgba(255,255,255,0.25); }
+    footer { margin-top: 18px; font-size: 14px; color: rgba(234,240,255,0.75); }
+    .small { font-size: 13px; color: rgba(234,240,255,0.75); margin-top: 10px; }
+    .grid { display:grid; grid-template-columns: 1fr; gap: 14px; margin-top: 14px; }
+    @media (min-width: 760px){ .grid{ grid-template-columns: 1.2fr 0.8fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Clínica de Estimulación Magnética Transcraneal en Tijuana</h1>
+      <p>Este sitio proporciona información general y canales para <strong>agendamiento</strong>, <strong>confirmaciones</strong> y <strong>seguimiento administrativo</strong>. No realizamos diagnósticos médicos ni decisiones clínicas a través de este sitio.</p>
+
+      <div class="grid">
+        <div class="card" style="padding:18px;">
+          <h2 style="margin:0 0 10px; font-size:20px;">Agenda / Contacto</h2>
+          <p style="margin:0 0 10px;">Si deseas agendar, te podemos contactar por WhatsApp con fines informativos y administrativos (con tu consentimiento).</p>
+          <div class="cta">
+            <a class="btn primary" href="PON_AQUI_TU_LINK_DE_FORMULARIO" target="_blank" rel="noopener">Agendar / Solicitar información</a>
+            <a class="btn secondary" href="PON_AQUI_TU_LINK_DE_GAMMA_ES" target="_blank" rel="noopener">Ver sitio completo</a>
+          </div>
+          <p class="small">Al enviar el formulario aceptas nuestra <a href="/politica-de-privacidad" style="color:#9ec0ff;">Política de Privacidad</a>.</p>
+        </div>
+
+        <div class="card" style="padding:18px;">
+          <h2 style="margin:0 0 10px; font-size:20px;">Documentos</h2>
+          <ul style="margin:0; padding-left:18px;">
+            <li><a href="/politica-de-privacidad" style="color:#9ec0ff;">Política de Privacidad</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <footer>
+        Contacto: <span style="opacity:.9;">PON_AQUI_TU_CORREO</span> · © <span id="y"></span> Clínica EMT Tijuana
+      </footer>
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
