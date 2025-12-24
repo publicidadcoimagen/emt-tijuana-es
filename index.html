@@ -1,61 +1,215 @@
-<div style="text-align:center; margin-bottom:18px;">
-  <img src="/assets/logotipoclinicaemt.jpg"
-       alt="Clínica de Estimulación Magnética Transcraneal en Tijuana"
-       style="max-width:260px; width:100%; height:auto; border-radius:12px;">
-</div>
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Clínica de Estimulación Magnética Transcraneal en Tijuana</title>
-  <meta name="description" content="Información y atención administrativa para agendar citas y resolver dudas sobre nuestros servicios." />
+  <meta name="description" content="Atención informativa y administrativa para agendar citas y resolver dudas sobre nuestros servicios." />
   <meta name="robots" content="index, follow" />
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background:#0b1220; color:#eaf0ff;}
-    .wrap { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
-    .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 24px; }
-    h1 { font-size: 32px; margin: 0 0 12px; }
-    p { line-height: 1.6; color: rgba(234,240,255,0.9); }
-    .cta { display:flex; gap:12px; flex-wrap: wrap; margin-top: 16px; }
-    a.btn { text-decoration:none; padding: 12px 16px; border-radius: 12px; font-weight: 600; display:inline-block; }
-    .primary { background:#4f8cff; color:#081022; }
-    .secondary { background:transparent; color:#eaf0ff; border:1px solid rgba(255,255,255,0.25); }
-    footer { margin-top: 18px; font-size: 14px; color: rgba(234,240,255,0.75); }
-    .small { font-size: 13px; color: rgba(234,240,255,0.75); margin-top: 10px; }
-    .grid { display:grid; grid-template-columns: 1fr; gap: 14px; margin-top: 14px; }
-    @media (min-width: 760px){ .grid{ grid-template-columns: 1.2fr 0.8fr; } }
+    :root{
+      --bg1:#070b18; --bg2:#0b2a5f;
+      --card:rgba(255,255,255,.07);
+      --border:rgba(255,255,255,.14);
+      --text:rgba(240,246,255,.92);
+      --muted:rgba(240,246,255,.72);
+      --brand:#4f8cff;
+      --brand2:#7dd3ff;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(79,140,255,.35), transparent 60%),
+        radial-gradient(800px 520px at 85% 20%, rgba(125,211,255,.22), transparent 55%),
+        linear-gradient(140deg, var(--bg1), var(--bg2));
+      min-height:100vh;
+    }
+    a{color:var(--brand2); text-decoration:none}
+    a:hover{opacity:.92; text-decoration:underline}
+    .wrap{max-width:1040px; margin:0 auto; padding:56px 18px;}
+    .shell{
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow:hidden;
+    }
+    .topbar{
+      padding:22px 22px 10px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .brand{display:flex; align-items:center; gap:14px; min-width:0}
+    .logo{
+      width:56px; height:56px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
+      display:flex; align-items:center; justify-content:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .logo img{width:100%; height:100%; object-fit:cover}
+    .btxt{min-width:0}
+    .btxt h1{font-size:18px; margin:0; letter-spacing:.2px}
+    .btxt p{margin:4px 0 0; color:var(--muted); font-size:13px}
+    .pill{
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      border-radius:999px;
+      font-size:12px; color:var(--muted);
+      white-space:nowrap;
+    }
+    .hero{
+      padding:18px 22px 28px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+    }
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr}
+      .pill{display:none}
+    }
+    .hcard{
+      border:1px solid var(--border);
+      background:var(--card);
+      border-radius: var(--radius);
+      padding:20px;
+    }
+    .hcard h2{margin:0 0 10px; font-size:28px; line-height:1.15}
+    .hcard p{margin:0 0 14px; color:var(--muted); line-height:1.6}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:700;
+      border:1px solid rgba(255,255,255,.18);
+      text-decoration:none;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#071021;
+      border:none;
+      box-shadow: 0 10px 30px rgba(79,140,255,.25);
+    }
+    .btn.secondary{
+      background: rgba(0,0,0,.18);
+      color:var(--text);
+    }
+    .note{font-size:12.5px; color:var(--muted); margin-top:10px}
+    .grid{
+      padding:0 22px 22px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
+    .card{
+      border:1px solid var(--border);
+      background:var(--card);
+      border-radius: var(--radius);
+      padding:18px;
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.65}
+    .card p{margin:8px 0 0; color:var(--muted); line-height:1.65}
+    .footer{
+      padding:18px 22px;
+      border-top:1px solid rgba(255,255,255,.12);
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      color:rgba(240,246,255,.68);
+      font-size:13px;
+    }
+    .links{display:flex; gap:14px; flex-wrap:wrap}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="card">
-      <h1>Clínica de Estimulación Magnética Transcraneal en Tijuana</h1>
-      <p>Este sitio proporciona información general y canales para <strong>agendamiento</strong>, <strong>confirmaciones</strong> y <strong>seguimiento administrativo</strong>. No realizamos diagnósticos médicos ni decisiones clínicas a través de este sitio.</p>
-
-      <div class="grid">
-        <div class="card" style="padding:18px;">
-          <h2 style="margin:0 0 10px; font-size:20px;">Agenda / Contacto</h2>
-          <p style="margin:0 0 10px;">Si deseas agendar, te podemos contactar por WhatsApp con fines informativos y administrativos (con tu consentimiento).</p>
-          <div class="cta">
-            <a class="btn secondary" href="https://clinica-de-estimulacion--tlmuejr.gamma.site/" target="_blank" rel="noopener">Ver sitio completo</a>
+    <div class="shell">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo">
+            <img src="/assets/logotipoclinicaemt.jpg" alt="Clínica EMT Tijuana">
           </div>
-          <p class="small">Al enviar el formulario aceptas nuestra <a href="/politica-de-privacidad" style="color:#9ec0ff;">Política de Privacidad</a>
+          <div class="btxt">
+            <h1>Clínica de Estimulación Magnética Transcraneal</h1>
+            <p>Tijuana · Atención informativa y administrativa</p>
+          </div>
+        </div>
+        <div class="pill">No diagnósticos por WhatsApp · Canal informativo</div>
+      </div>
 
-.</p>
+      <div class="hero">
+        <div class="hcard">
+          <h2>Innovación y esperanza para tu bienestar mental</h2>
+          <p>
+            Te ayudamos a agendar, confirmar citas y resolver dudas generales sobre nuestros servicios.
+            Este sitio no ofrece diagnóstico médico ni decisiones clínicas automatizadas.
+          </p>
+
+          <div class="cta">
+            <!-- Cuando tengas Jotform, lo vuelves a poner aquí -->
+            <a class="btn primary" href="PON_AQUI_TU_LINK_DE_FORMULARIO" target="_blank" rel="noopener">Agendar / Solicitar información</a>
+            <a class="btn secondary" href="PON_AQUI_TU_LINK_DE_GAMMA_ES" target="_blank" rel="noopener">Ver sitio completo</a>
+            <a class="btn secondary" href="/politica-de-privacidad">Política de Privacidad</a>
+          </div>
+          <div class="note">
+            Al enviar el formulario aceptas nuestra <a href="/politica-de-privacidad">Política de Privacidad</a> y el contacto por WhatsApp con fines informativos y administrativos.
+          </div>
         </div>
 
-        <div class="card" style="padding:18px;">
-          <h2 style="margin:0 0 10px; font-size:20px;">Documentos</h2>
-          <ul style="margin:0; padding-left:18px;">
-<li><a href="/politica-de-privacidad" style="color:#9ec0ff;">Política de Privacidad</a></li>
-          </ul>
+        <div class="hcard">
+          <h3 style="margin:0 0 10px;">Contacto</h3>
+          <p style="margin:0 0 10px;">
+            Correo: <strong>info@estimulacionmagneticatranscranealtijuana.com</strong><br>
+            Ubicación: <span style="color:var(--muted);">Tijuana, BC</span>
+          </p>
+          <p style="margin:0; font-size:13px; color:var(--muted);">
+            ¿Eres paciente? Agenda una cita o solicita información desde el formulario.
+          </p>
         </div>
       </div>
 
-      <footer>
-        Contacto: <span style="opacity:.9;">info@estimulacionmagneticatranscranealtijuana.com</span> · © <span id="y"></span> Clínica EMT Tijuana
-      </footer>
+      <div class="grid">
+        <div class="card">
+          <h3>Qué hacemos</h3>
+          <ul>
+            <li>Atención informativa sobre servicios</li>
+            <li>Agendamiento y confirmaciones</li>
+            <li>Recordatorios y seguimiento administrativo</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Cómo funciona</h3>
+          <ul>
+            <li>Envías tu solicitud</li>
+            <li>Te contactamos para coordinar</li>
+            <li>Confirmamos tu cita</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Documentos</h3>
+          <p>
+            <a href="/politica-de-privacidad">Política de Privacidad</a><br>
+            <span style="color:var(--muted);">Transparencia y consentimiento de contacto.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div>© <span id="y"></span> Clínica EMT Tijuana</div>
+        <div class="links">
+          <a href="/politica-de-privacidad">Privacidad</a>
+          <a href="https://clinica-de-estimulacion--tlmuejr.gamma.site" target="_blank" rel="noopener">Sitio completo</a>
+        </div>
+      </div>
     </div>
   </div>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
