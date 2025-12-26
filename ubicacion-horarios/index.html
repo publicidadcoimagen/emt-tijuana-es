@@ -27,20 +27,24 @@
     .btxt h1{font-size:18px;margin:0;letter-spacing:.2px} .btxt p{margin:4px 0 0;color:var(--muted);font-size:13px}
     .pill{padding:8px 12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.18);border-radius:999px;font-size:12px;color:var(--muted);white-space:nowrap;}
     @media (max-width:860px){.pill{display:none}}
-    .content{padding:18px 22px 24px;display:grid;grid-template-columns:1.2fr .8fr;gap:18px;}
+    .content{padding:18px 22px 24px;display:grid;grid-template-columns:1.15fr .85fr;gap:18px;}
     @media (max-width:1024px){.content{grid-template-columns:1fr}}
-    .card{border:1px solid var(--border);background:var(--card);border-radius:var(--radius);padding:20px;}
+    .card{border:1px solid var(--border);background:var(--card);border-radius:var(--radius);padding:20px;overflow:hidden;}
     .card h2{margin:0 0 10px;font-size:28px;line-height:1.15}
     .card h3{margin:18px 0 8px;font-size:16px}
     .card p{margin:0 0 12px;color:var(--muted);line-height:1.75}
     .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;font-weight:700;border:1px solid rgba(255,255,255,.18);text-decoration:none;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;font-weight:800;border:1px solid rgba(255,255,255,.18);text-decoration:none;white-space:nowrap;}
     .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#071021;border:none;box-shadow:0 10px 30px rgba(79,140,255,.25);}
     .btn.secondary{background:rgba(0,0,0,.18);color:var(--text);}
+    @media (max-width:520px){.cta{flex-direction:column}.btn{width:100%;white-space:normal}}
     .note{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.6}
+    .box{border:1px dashed rgba(255,255,255,.22);border-radius:14px;padding:12px 14px;background:rgba(0,0,0,.18);color:var(--muted);line-height:1.7}
+    .mapWrap{border:1px solid rgba(255,255,255,.14);border-radius:14px;overflow:hidden;background:rgba(0,0,0,.18)}
+    .mapWrap iframe{width:100%;height:320px;border:0;display:block}
+    @media (max-width:520px){.mapWrap iframe{height:280px}}
     .footer{padding:18px 22px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:rgba(240,246,255,.68);font-size:13px;}
     .links{display:flex;gap:14px;flex-wrap:wrap}
-    .box{border:1px dashed rgba(255,255,255,.22);border-radius:14px;padding:12px 14px;background:rgba(0,0,0,.18);color:var(--muted);line-height:1.7}
   </style>
 </head>
 <body>
@@ -64,9 +68,22 @@
 
           <h3>Dirección</h3>
           <div class="box">
-            Tijuana, Baja California, México<br>
-            <span style="opacity:.85;">(Si deseas que aparezca la dirección exacta aquí, dímela y la colocamos.)</span>
+            Paseo de los Héroes 10999, Consultorio 205<br>
+            Torre de consultorios del Hospital Angeles Tijuana<br>
+            Tijuana, Baja California, México
           </div>
+
+          <h3>Mapa</h3>
+          <div class="mapWrap">
+            <iframe
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Paseo%20de%20los%20H%C3%A9roes%2010999%20Consultorio%20205%20Hospital%20Angeles%20Tijuana&output=embed">
+            </iframe>
+          </div>
+          <p style="margin-top:10px">
+            <a class="btn secondary" href="https://maps.app.goo.gl/WjzVF9p4rKgoYCzMA" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          </p>
 
           <h3>Horarios</h3>
           <div class="box">
