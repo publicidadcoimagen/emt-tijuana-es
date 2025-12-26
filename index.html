@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Clínica de Estimulación Magnética Transcraneal en Tijuana | Agenda tu cita</title>
-  <meta name="description" content="Clínica de Estimulación Magnética Transcraneal en Tijuana. Información y agendamiento. Atención informativa y administrativa. Agenda tu cita en minutos." />
+  <meta name="description" content="Clínica de Estimulación Magnética Transcraneal en Tijuana. Información y agendamiento. Agenda tu cita en minutos." />
   <meta name="robots" content="index, follow" />
   <style>
     :root{
@@ -32,6 +32,7 @@
     }
     a{color:var(--brand2); text-decoration:none}
     a:hover{text-decoration:underline}
+
     .wrap{
       max-width:1200px;
       margin:0 auto;
@@ -48,13 +49,18 @@
       border-radius: var(--radius);
       overflow:hidden;
     }
-    .topbar{
-      padding:22px 22px 10px;
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
+
+    /* ===== NAV ===== */
+    .nav{
+      padding:14px 22px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.12);
+      backdrop-filter: blur(10px);
     }
-    .brand{display:flex; align-items:center; gap:14px; min-width:0}
+    .nav-left{display:flex; align-items:center; gap:12px; min-width:0}
     .logo{
-      width:56px; height:56px; border-radius:14px;
+      width:44px; height:44px; border-radius:12px;
       border:1px solid rgba(255,255,255,.18);
       background:rgba(255,255,255,.06);
       display:flex; align-items:center; justify-content:center;
@@ -62,8 +68,93 @@
       flex:0 0 auto;
     }
     .logo img{max-width:100%; max-height:100%; object-fit:contain}
-    .btxt h1{font-size:18px; margin:0; letter-spacing:.2px}
-    .btxt p{margin:4px 0 0; color:var(--muted); font-size:13px}
+    .brandtxt{min-width:0}
+    .brandtxt .t{font-weight:900; letter-spacing:.2px; font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .brandtxt .s{color:var(--muted); font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+    .nav-links{
+      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+      font-size:13px;
+    }
+    .nav-links a{
+      color:rgba(240,246,255,.86);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.10);
+      text-decoration:none;
+    }
+    .nav-links a:hover{background:rgba(0,0,0,.18)}
+    .nav-cta{
+      display:flex; align-items:center; gap:10px;
+    }
+    .nav-btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      color:var(--text);
+      text-decoration:none;
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .nav-btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#071021;
+      border:none;
+      box-shadow: 0 10px 30px rgba(79,140,255,.22);
+    }
+
+    .burger{
+      display:none;
+      width:42px; height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      color:rgba(240,246,255,.9);
+      font-size:18px;
+      line-height:1;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+    .mobile-menu{
+      display:none;
+      padding:10px 22px 18px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.10);
+    }
+    .mobile-menu a{
+      display:block;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.14);
+      color:rgba(240,246,255,.88);
+      text-decoration:none;
+      margin-top:10px;
+      font-weight:700;
+      font-size:14px;
+    }
+    .mobile-menu a.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#071021;
+      border:none;
+    }
+    @media (max-width: 980px){
+      .nav-links{display:none}
+      .nav-cta{display:none}
+      .burger{display:inline-flex}
+      .mobile-menu.open{display:block}
+    }
+
+    /* ===== HEADER (compact) ===== */
+    .topbar{
+      padding:18px 22px 10px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
     .pill{
       padding:8px 12px;
       border:1px solid rgba(255,255,255,.18);
@@ -72,6 +163,8 @@
       font-size:12px; color:var(--muted);
       white-space:nowrap;
     }
+    @media (max-width: 860px){ .pill{display:none} }
+
     .hero{
       padding:18px 22px 18px;
       display:grid;
@@ -79,13 +172,13 @@
       gap:18px;
     }
     @media (max-width: 1024px){ .hero{grid-template-columns:1fr} }
-    @media (max-width: 860px){ .pill{display:none} }
 
     .hcard{
       border:1px solid var(--border);
       background:var(--card);
       border-radius: var(--radius);
       padding:20px;
+      overflow:hidden;
     }
     .kicker{
       display:inline-flex; align-items:center; gap:8px;
@@ -96,16 +189,30 @@
       margin-bottom:10px;
     }
     .dot{width:8px; height:8px; border-radius:99px; background:var(--ok); box-shadow:0 0 0 4px rgba(88,214,141,.15);}
-    .hcard h2{margin:0 0 10px; font-size:30px; line-height:1.12}
-    .hcard p{margin:0 0 14px; color:var(--muted); line-height:1.65}
+
+    /* ✅ FIX móvil: títulos y texto responsivos + wrap */
+    .hcard h2{
+      margin:0 0 10px;
+      font-size: clamp(24px, 5.4vw, 32px);
+      line-height:1.12;
+      word-break: break-word;
+    }
+    .hcard p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.65;
+      word-break: break-word;
+    }
+
     .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 16px;
       border-radius:14px;
-      font-weight:700;
+      font-weight:800;
       border:1px solid rgba(255,255,255,.18);
       text-decoration:none;
+      white-space:nowrap;
     }
     .btn.primary{
       background: linear-gradient(135deg, var(--brand), var(--brand2));
@@ -113,15 +220,20 @@
       border:none;
       box-shadow: 0 10px 30px rgba(79,140,255,.25);
     }
-    .btn.secondary{ background: rgba(0,0,0,.18); color:var(--text); }
+    .btn.secondary{
+      background: rgba(0,0,0,.18);
+      color:var(--text);
+    }
+
+    /* ✅ FIX clave: en móvil los botones se apilan a 100% (evita “View” cortado) */
+    @media (max-width: 520px){
+      .cta{flex-direction:column}
+      .btn{width:100%; white-space:normal}
+    }
+
     .note{font-size:12.5px; color:var(--muted); margin-top:10px}
-    .mini{
-      display:grid; gap:10px; margin-top:12px;
-    }
-    .mini .row{
-      display:flex; gap:10px; align-items:flex-start;
-      color:var(--muted); font-size:13px; line-height:1.5;
-    }
+    .mini{display:grid; gap:10px; margin-top:12px;}
+    .mini .row{display:flex; gap:10px; align-items:flex-start; color:var(--muted); font-size:13px; line-height:1.5;}
     .mini .badge{
       flex:0 0 auto;
       width:26px; height:26px; border-radius:10px;
@@ -129,7 +241,7 @@
       border:1px solid rgba(255,255,255,.14);
       background:rgba(0,0,0,.18);
       color:rgba(240,246,255,.9);
-      font-weight:800;
+      font-weight:900;
       font-size:12px;
     }
 
@@ -149,6 +261,14 @@
     .card h3{margin:0 0 8px; font-size:16px}
     .card p, .card li{color:var(--muted); line-height:1.65}
     .card ul{margin:10px 0 0; padding-left:18px}
+
+    .disclaimer{
+      padding:0 22px 22px;
+      color:rgba(240,246,255,.65);
+      font-size:12.5px;
+      line-height:1.6;
+    }
+
     .footer{
       padding:18px 22px;
       border-top:1px solid rgba(255,255,255,.12);
@@ -157,27 +277,52 @@
       font-size:13px;
     }
     .links{display:flex; gap:14px; flex-wrap:wrap}
-    .disclaimer{
-      padding:0 22px 22px;
-      color:rgba(240,246,255,.65);
-      font-size:12.5px;
-      line-height:1.6;
-    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="shell">
-      <div class="topbar">
-        <div class="brand">
-          <div class="logo">
-            <img src="/assets/logotipoclinicaemt.jpg" alt="Clínica EMT Tijuana">
-          </div>
-          <div class="btxt">
-            <h1>Clínica de Estimulación Magnética Transcraneal</h1>
-            <p>Tijuana · Atención informativa y administrativa</p>
+
+      <!-- NAV + MENU -->
+      <div class="nav">
+        <div class="nav-left">
+          <div class="logo"><img src="/assets/logotipoclinicaemt.jpg" alt="Clínica EMT Tijuana"></div>
+          <div class="brandtxt">
+            <div class="t">Clínica EMT Tijuana</div>
+            <div class="s">Landing + Directorio informativo</div>
           </div>
         </div>
+
+        <div class="nav-links">
+          <a href="/que-es-la-emt/">¿Qué es?</a>
+          <a href="/como-funciona/">Cómo funciona</a>
+          <a href="/beneficios/">Beneficios</a>
+          <a href="/preguntas-frecuentes/">FAQ</a>
+          <a href="/ubicacion-horarios/">Ubicación</a>
+          <a href="/politica-de-privacidad">Privacidad</a>
+        </div>
+
+        <div class="nav-cta">
+          <a class="nav-btn" href="https://clinica-de-estimulacion--tlmuejr.gamma.site/" target="_blank" rel="noopener">Sitio completo</a>
+          <a class="nav-btn primary" href="https://form.jotform.com/253035641475153" target="_blank" rel="noopener">Agendar</a>
+        </div>
+
+        <button class="burger" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+      </div>
+
+      <div id="mobileMenu" class="mobile-menu">
+        <a class="primary" href="https://form.jotform.com/253035641475153" target="_blank" rel="noopener">Agendar / Solicitar información</a>
+        <a href="/que-es-la-emt/">¿Qué es la EMT?</a>
+        <a href="/como-funciona/">Cómo funciona</a>
+        <a href="/beneficios/">Beneficios</a>
+        <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
+        <a href="/ubicacion-horarios/">Ubicación y horarios</a>
+        <a href="/politica-de-privacidad">Política de Privacidad</a>
+        <a href="https://clinica-de-estimulacion--tlmuejr.gamma.site/" target="_blank" rel="noopener">Ver sitio completo</a>
+      </div>
+
+      <div class="topbar">
+        <div></div>
         <div class="pill">No diagnósticos por WhatsApp · Canal informativo</div>
       </div>
 
@@ -259,12 +404,23 @@
       <div class="footer">
         <div>© <span id="y"></span> Clínica EMT Tijuana</div>
         <div class="links">
+          <a href="/que-es-la-emt/">¿Qué es?</a>
+          <a href="/como-funciona/">Cómo funciona</a>
+          <a href="/beneficios/">Beneficios</a>
+          <a href="/preguntas-frecuentes/">FAQ</a>
+          <a href="/ubicacion-horarios/">Ubicación</a>
           <a href="/politica-de-privacidad">Privacidad</a>
-          <a href="https://clinica-de-estimulacion--tlmuejr.gamma.site/" target="_blank" rel="noopener">Sitio completo</a>
         </div>
       </div>
     </div>
   </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function toggleMenu(){
+      var el = document.getElementById('mobileMenu');
+      el.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
