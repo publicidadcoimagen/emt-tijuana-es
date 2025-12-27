@@ -1,69 +1,174 @@
-<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png">
-<link rel="shortcut icon" href="/assets/favicon.ico">
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Política de Privacidad | Clínica EMT Tijuana</title>
+  <meta name="description" content="Política de Privacidad de la Clínica de Estimulación Magnética Transcraneal en Tijuana. Información sobre datos personales, WhatsApp, consentimientos y derechos ARCO." />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://estimulacionmagneticatranscranealtijuana.com/politica-de-privacidad/" />
+
+  <!-- Favicon + Touch icon (asegúrate de crear estos archivos en /assets) -->
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
+
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background:#0b1220; color:#eaf0ff;}
-    .wrap { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
-    .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 24px; }
-    p,li { line-height: 1.6; color: rgba(234,240,255,0.9); }
-    a { color:#9ec0ff; }
-    .muted { color: rgba(234,240,255,0.7); }
+    :root{--bg1:#070b18;--bg2:#0b2a5f;--card:rgba(255,255,255,.07);--border:rgba(255,255,255,.14);--text:rgba(240,246,255,.92);--muted:rgba(240,246,255,.72);--brand:#4f8cff;--brand2:#7dd3ff;--shadow:0 20px 60px rgba(0,0,0,.45);--radius:18px;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);
+      background:radial-gradient(900px 600px at 20% 10%, rgba(79,140,255,.35), transparent 60%),
+      radial-gradient(800px 520px at 85% 20%, rgba(125,211,255,.22), transparent 55%),
+      linear-gradient(140deg,var(--bg1),var(--bg2));min-height:100vh;}
+    a{color:var(--brand2);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1200px;margin:0 auto;padding:clamp(24px,5vw,72px) clamp(16px,4vw,32px);min-height:100vh;display:flex;align-items:center;}
+    .shell{width:100%;border:1px solid var(--border);background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));box-shadow:var(--shadow);border-radius:var(--radius);overflow:hidden;}
+    .topbar{padding:22px 22px 10px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+    .logo{width:56px;height:56px;border-radius:14px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;overflow:hidden;flex:0 0 auto;}
+    .logo img{max-width:100%;max-height:100%;object-fit:contain}
+    .btxt h1{font-size:18px;margin:0;letter-spacing:.2px} .btxt p{margin:4px 0 0;color:var(--muted);font-size:13px}
+    .pill{padding:8px 12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.18);border-radius:999px;font-size:12px;color:var(--muted);white-space:nowrap;}
+    @media (max-width:860px){.pill{display:none}}
+    .content{padding:18px 22px 24px;display:grid;grid-template-columns:1.15fr .85fr;gap:18px;}
+    @media (max-width:1024px){.content{grid-template-columns:1fr}}
+    .card{border:1px solid var(--border);background:var(--card);border-radius:var(--radius);padding:20px;overflow:hidden;}
+    .card h2{margin:0 0 10px;font-size:28px;line-height:1.15}
+    .card h3{margin:18px 0 8px;font-size:16px}
+    .card p{margin:0 0 12px;color:var(--muted);line-height:1.75}
+    .card ul{margin:8px 0 0;padding-left:18px;color:var(--muted);line-height:1.75}
+    .box{border:1px dashed rgba(255,255,255,.22);border-radius:14px;padding:12px 14px;background:rgba(0,0,0,.18);color:var(--muted);line-height:1.7}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;font-weight:800;border:1px solid rgba(255,255,255,.18);text-decoration:none;white-space:nowrap;}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#071021;border:none;box-shadow:0 10px 30px rgba(79,140,255,.25);}
+    .btn.secondary{background:rgba(0,0,0,.18);color:var(--text);}
+    @media (max-width:520px){.cta{flex-direction:column}.btn{width:100%;white-space:normal}}
+    .note{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.6}
+    .footer{padding:18px 22px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:rgba(240,246,255,.68);font-size:13px;}
+    .links{display:flex;gap:14px;flex-wrap:wrap}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="card">
-<a href="/">← Back</a>
-      <h1>Política de Privacidad</h1>
-      <p class="muted">Última actualización: <strong>23 dic 2025</strong></p>
+    <div class="shell">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo"><img src="/assets/logotipoclinicaemt.jpg" alt="Clínica EMT Tijuana"></div>
+          <div class="btxt">
+            <h1>Clínica de Estimulación Magnética Transcraneal</h1>
+            <p>Tijuana · Política de Privacidad</p>
+          </div>
+        </div>
+        <div class="pill">Transparencia · Consentimiento · Datos</div>
+      </div>
 
-      <p>Esta Política de Privacidad describe cómo <strong>Clínica de Estimulación Magnética Transcraneal Tijuana</strong> (en adelante, “la Clínica”) recopila, utiliza y protege datos personales de usuarios que interactúan con nuestro sitio web, formularios y canales de comunicación (incluido WhatsApp).</p>
+      <div class="content">
+        <div class="card">
+          <h2>Política de Privacidad</h2>
+          <p>
+            En la Clínica de Estimulación Magnética Transcraneal en Tijuana, tu privacidad es prioritaria.
+            Esta política describe cómo recopilamos, usamos y protegemos tus datos al interactuar con nuestros formularios, sitio web y canales de comunicación (incluyendo WhatsApp).
+          </p>
 
-      <h2>1. Responsable</h2>
-      <ul>
-        <li><strong>Responsable:</strong> Clínica de Estimulación Magnética Transcraneal Tijuana</li>
-        <li><strong>Sitio web:</strong> https://estimulacionmagneticatranscranealtijuana.com</li>
-        <li><strong>Contacto:</strong> <span>info@estimulacionmagneticatranscranealtijuana.com</span></li>
-      </ul>
+          <div class="box">
+            <strong>Importante:</strong> Este sitio brinda información y soporte administrativo (agendar/confirmar). No realizamos diagnósticos médicos ni decisiones clínicas automatizadas mediante este sitio o WhatsApp.
+          </div>
 
-      <h2>2. Datos que recopilamos</h2>
-      <p>Podemos recopilar: nombre, teléfono, correo electrónico y la información de contacto que el usuario proporcione voluntariamente.</p>
-      <p><strong>No</strong> solicitamos diagnósticos ni procesamos decisiones clínicas automatizadas a través de formularios públicos o WhatsApp.</p>
+          <h3>1) Responsable del tratamiento</h3>
+          <p>
+            Responsable: Clínica de Estimulación Magnética Transcraneal Tijuana<br>
+            Sitio web: https://estimulacionmagneticatranscranealtijuana.com/<br>
+            Contacto: <strong>info@estimulacionmagneticatranscranealtijuana.com</strong>
+          </p>
 
-      <h2>3. Finalidades</h2>
-      <ul>
-        <li>Atención informativa y administrativa</li>
-        <li>Agendamiento, confirmación y recordatorios de citas</li>
-        <li>Seguimiento general no clínico</li>
-      </ul>
+          <h3>2) Datos que podemos recopilar</h3>
+          <ul>
+            <li>Datos de contacto: nombre, teléfono/WhatsApp, correo electrónico.</li>
+            <li>Datos administrativos: disponibilidad/horarios, motivo general de consulta (a nivel informativo).</li>
+            <li>Datos técnicos: información básica de navegación (cookies/analítica si aplica).</li>
+          </ul>
 
-      <h2>4. WhatsApp</h2>
-      <p>Utilizamos WhatsApp únicamente como canal de comunicación <strong>informativa y administrativa</strong>. El usuario otorga su consentimiento al marcar la casilla correspondiente en nuestros formularios o al iniciar contacto directo.</p>
+          <h3>3) Finalidades de uso</h3>
+          <ul>
+            <li>Agendar, confirmar o reprogramar citas.</li>
+            <li>Responder preguntas generales y brindar orientación inicial sobre el proceso.</li>
+            <li>Seguimiento administrativo (recordatorios/confirmaciones).</li>
+            <li>Mejora del servicio y del sitio (si usas analítica).</li>
+          </ul>
 
-      <h2>5. Conservación</h2>
-      <p>Conservamos los datos únicamente el tiempo necesario para cumplir las finalidades descritas o mientras exista relación activa, salvo obligación legal en contrario.</p>
+          <h3>4) WhatsApp (consentimiento)</h3>
+          <p>
+            WhatsApp se utiliza como canal <strong>informativo y administrativo</strong>.
+            Solo te contactaremos por WhatsApp si tú lo autorizas al enviar el formulario o al solicitar contacto.
+          </p>
 
-      <h2>6. Seguridad</h2>
-      <p>Adoptamos medidas razonables administrativas, técnicas y organizativas para proteger los datos contra pérdida, uso indebido, acceso no autorizado o divulgación.</p>
+          <h3>5) Compartición / transferencias</h3>
+          <p>
+            Tus datos no se comparten, venden o transfieren a terceros, salvo cuando sea necesario para operar el servicio (por ejemplo, herramientas de formularios/hosting) o por obligación legal.
+            En esos casos, se aplica confidencialidad y medidas de seguridad (esto está alineado con el texto de tu política en PDF):contentReference[oaicite:3]{index=3}.
+          </p>
 
-      <h2>7. Compartición</h2>
-      <p>No compartimos datos con terceros salvo obligación legal o cuando sea necesario para prestar el servicio, bajo acuerdos de confidencialidad cuando aplique.</p>
+          <h3>6) Conservación</h3>
+          <p>
+            Conservamos los datos el tiempo necesario para cumplir las finalidades descritas o para atender obligaciones legales/administrativas.
+          </p>
 
-      <h2>8. Derechos</h2>
-      <p>El usuario puede solicitar acceso, rectificación, cancelación u oposición al tratamiento mediante el correo indicado.</p>
+          <h3>7) Tus derechos (ARCO)</h3>
+          <p>
+            Puedes solicitar: <strong>Acceso, Rectificación, Cancelación u Oposición</strong> respecto a tus datos personales:contentReference[oaicite:4]{index=4}.
+            Escríbenos a <strong>info@estimulacionmagneticatranscranealtijuana.com</strong>.
+          </p>
 
-      <h2>9. Cambios</h2>
-      <p>Podemos actualizar esta Política. Cualquier cambio será publicado en esta misma página.</p>
+          <h3>8) Seguridad</h3>
+          <p>
+            Implementamos medidas técnicas y organizativas razonables para proteger tus datos contra acceso no autorizado, pérdida o uso indebido.
+          </p>
 
-      <p class="muted">Dudas: <strong>info@estimulacionmagneticatranscranealtijuana.com</strong></p>
+          <h3>9) Cambios a esta política</h3>
+          <p>
+            Podemos actualizar esta política para reflejar cambios regulatorios o de operación; publicaremos la versión vigente en este mismo sitio:contentReference[oaicite:5]{index=5}.
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="https://form.jotform.com/253035641475153" target="_blank" rel="noopener">Agendar / Solicitar información</a>
+            <a class="btn secondary" href="/" rel="noopener">Volver a la landing</a>
+            <a class="btn secondary" href="https://clinica-de-estimulacion--tlmuejr.gamma.site/" target="_blank" rel="noopener">Ver sitio completo</a>
+          </div>
+
+          <div class="note">
+            Si tienes preguntas sobre esta Política de Privacidad, contáctanos por correo.
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 10px;">Directorio</h3>
+          <ul>
+            <li><a href="/que-es-la-emt/">¿Qué es la EMT?</a></li>
+            <li><a href="/como-funciona/">Cómo funciona</a></li>
+            <li><a href="/beneficios/">Beneficios</a></li>
+            <li><a href="/preguntas-frecuentes/">Preguntas frecuentes</a></li>
+            <li><a href="/ubicacion-horarios/">Ubicación y horarios</a></li>
+          </ul>
+
+          <h3>Contacto</h3>
+          <p>
+            Email: <strong>info@estimulacionmagneticatranscranealtijuana.com</strong><br>
+            Ubicación: <span style="color:var(--muted);">Tijuana, BC</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div>© <span id="y"></span> Clínica EMT Tijuana</div>
+        <div class="links">
+          <a href="/">Inicio</a>
+          <a href="/preguntas-frecuentes/">FAQ</a>
+          <a href="/ubicacion-horarios/">Ubicación</a>
+        </div>
+      </div>
     </div>
   </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
