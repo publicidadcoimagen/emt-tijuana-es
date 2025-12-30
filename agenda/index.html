@@ -1,11 +1,12 @@
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/assets/favicon-16.png" sizes="16x16" type="image/png">
 <link rel="shortcut icon" href="/assets/favicon.ico"><!doctype html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Agenda | Clínica EMT Tijuana</title>
+  <title>Agenda tu cita | Clínica EMT Tijuana</title>
   <meta name="description" content="Agenda tu cita. Selecciona un horario disponible en nuestro calendario." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://estimulacionmagneticatranscranealtijuana.com/agenda/" />
@@ -17,38 +18,158 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
 
   <style>
-    :root{--bg1:#070b18;--bg2:#0b2a5f;--card:rgba(255,255,255,.07);--border:rgba(255,255,255,.14);--text:rgba(240,246,255,.92);--muted:rgba(240,246,255,.72);--brand:#4f8cff;--brand2:#7dd3ff;--shadow:0 20px 60px rgba(0,0,0,.45);--radius:18px;}
+    :root{
+      --bg1:#070b18; --bg2:#0b2a5f;
+      --card:rgba(255,255,255,.07);
+      --border:rgba(255,255,255,.14);
+      --text:rgba(240,246,255,.92);
+      --muted:rgba(240,246,255,.72);
+      --brand:#4f8cff; --brand2:#7dd3ff;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius:18px;
+
+      /* Superficie clara para el calendario */
+      --surface:#ffffff;
+      --surfaceText:#0b1220;
+      --surfaceBorder:rgba(11,18,32,.12);
+    }
     *{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);
-      background:radial-gradient(900px 600px at 20% 10%, rgba(79,140,255,.35), transparent 60%),
-      radial-gradient(800px 520px at 85% 20%, rgba(125,211,255,.22), transparent 55%),
-      linear-gradient(140deg,var(--bg1),var(--bg2));min-height:100vh;}
-    a{color:var(--brand2);text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{max-width:1200px;margin:0 auto;padding:clamp(24px,5vw,72px) clamp(16px,4vw,32px);min-height:100vh;display:flex;align-items:center;}
-    .shell{width:100%;border:1px solid var(--border);background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));box-shadow:var(--shadow);border-radius:var(--radius);overflow:hidden;}
-    .topbar{padding:22px 22px 10px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
-    .brand{display:flex;align-items:center;gap:14px;min-width:0}
-    .logo{width:56px;height:56px;border-radius:14px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;overflow:hidden;flex:0 0 auto;}
-    .logo img{max-width:100%;max-height:100%;object-fit:contain}
-    .btxt h1{font-size:18px;margin:0;letter-spacing:.2px} .btxt p{margin:4px 0 0;color:var(--muted);font-size:13px}
-    .pill{padding:8px 12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.18);border-radius:999px;font-size:12px;color:var(--muted);white-space:nowrap;}
-    @media (max-width:860px){.pill{display:none}}
-    .content{padding:18px 22px 24px;display:grid;grid-template-columns:1.25fr .75fr;gap:18px;}
-    @media (max-width:1024px){.content{grid-template-columns:1fr}}
-    .card{border:1px solid var(--border);background:var(--card);border-radius:var(--radius);padding:20px;overflow:hidden;}
-    .card h2{margin:0 0 10px;font-size:28px;line-height:1.15}
-    .card p{margin:0 0 12px;color:var(--muted);line-height:1.75}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:14px;font-weight:800;border:1px solid rgba(255,255,255,.18);text-decoration:none;white-space:nowrap;}
-    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#071021;border:none;box-shadow:0 10px 30px rgba(79,140,255,.25);}
-    .btn.secondary{background:rgba(0,0,0,.18);color:var(--text);}
-    @media (max-width:520px){.cta{flex-direction:column}.btn{width:100%;white-space:normal}}
-    .frameWrap{border:1px solid rgba(255,255,255,.14);border-radius:14px;overflow:hidden;background:rgba(0,0,0,.18)}
-    .frameWrap iframe{width:100%;height:720px;border:0;display:block}
-    @media (max-width:520px){.frameWrap iframe{height:720px}}
-    .note{font-size:12.5px;color:var(--muted);margin-top:10px;line-height:1.6}
-    .footer{padding:18px 22px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:rgba(240,246,255,.68);font-size:13px;}
-    .links{display:flex;gap:14px;flex-wrap:wrap}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(79,140,255,.35), transparent 60%),
+        radial-gradient(800px 520px at 85% 20%, rgba(125,211,255,.22), transparent 55%),
+        linear-gradient(140deg, var(--bg1), var(--bg2));
+      min-height:100vh;
+    }
+    a{color:var(--brand2); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding: clamp(24px, 5vw, 72px) clamp(16px, 4vw, 32px);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+    }
+    .shell{
+      width:100%;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow:hidden;
+    }
+    .topbar{
+      padding:22px 22px 10px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .brand{display:flex; align-items:center; gap:14px; min-width:0}
+    .logo{
+      width:56px; height:56px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
+      display:flex; align-items:center; justify-content:center;
+      overflow:hidden; flex:0 0 auto;
+    }
+    .logo img{max-width:100%; max-height:100%; object-fit:contain}
+    .btxt h1{font-size:18px; margin:0; letter-spacing:.2px}
+    .btxt p{margin:4px 0 0; color:var(--muted); font-size:13px}
+    .pill{
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      border-radius:999px;
+      font-size:12px; color:var(--muted);
+      white-space:nowrap;
+    }
+    @media (max-width:860px){ .pill{display:none} }
+
+    .content{
+      padding:18px 22px 24px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+    }
+    @media (max-width:1024px){ .content{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid var(--border);
+      background:var(--card);
+      border-radius: var(--radius);
+      padding:20px;
+      overflow:hidden;
+    }
+    .card h2{margin:0 0 10px; font-size:28px; line-height:1.15}
+    .card p{margin:0 0 12px; color:var(--muted); line-height:1.75}
+
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.18);
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#071021;
+      border:none;
+      box-shadow: 0 10px 30px rgba(79,140,255,.25);
+    }
+    .btn.secondary{
+      background: rgba(0,0,0,.18);
+      color:var(--text);
+    }
+    @media (max-width:520px){
+      .cta{flex-direction:column}
+      .btn{width:100%; white-space:normal}
+    }
+
+    /* CONTENEDOR CLARO DEL CALENDARIO */
+    .frameShell{
+      margin-top:12px;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid var(--surfaceBorder);
+      background:var(--surface);
+      box-shadow: 0 12px 30px rgba(0,0,0,.20);
+    }
+    .frameHeader{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:10px 12px;
+      background: linear-gradient(180deg, rgba(245,248,255,1), rgba(255,255,255,1));
+      color:var(--surfaceText);
+      border-bottom:1px solid var(--surfaceBorder);
+      font-size:13px;
+      font-weight:800;
+    }
+    .frameShell iframe{
+      width:100%;
+      height:760px;
+      border:0;
+      display:block;
+      background:var(--surface);
+      color-scheme: light;
+    }
+    @media (max-width:520px){
+      .frameShell iframe{height:820px}
+    }
+
+    .note{font-size:12.5px; color:var(--muted); margin-top:10px; line-height:1.6}
+    .footer{
+      padding:18px 22px;
+      border-top:1px solid rgba(255,255,255,.12);
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      color:rgba(240,246,255,.68);
+      font-size:13px;
+    }
+    .links{display:flex; gap:14px; flex-wrap:wrap}
   </style>
 </head>
 <body>
@@ -57,7 +178,9 @@
 
       <div class="topbar">
         <div class="brand">
-          <div class="logo"><img src="/assets/logotipoclinicaemt.jpg" alt="Clínica EMT Tijuana"></div>
+          <div class="logo">
+            <img src="/assets/logotipoclinicaemt.jpg" alt="Clínica EMT Tijuana">
+          </div>
           <div class="btxt">
             <h1>Clínica de Estimulación Magnética Transcraneal</h1>
             <p>Tijuana · Agenda</p>
@@ -69,9 +192,13 @@
       <div class="content">
         <div class="card">
           <h2>Agenda tu cita</h2>
-          <p>Elige un horario disponible en el calendario. Si el calendario no se muestra, abre el enlace directo.</p>
+          <p>Selecciona un horario disponible en el calendario. Si no se muestra correctamente, abre el enlace directo.</p>
 
-          <div class="frameWrap">
+          <div class="frameShell">
+            <div class="frameHeader">
+              <div>Calendario</div>
+              <span>Citas disponibles</span>
+            </div>
             <iframe
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
@@ -84,19 +211,20 @@
               Abrir calendario en nueva pestaña
             </a>
             <a class="btn secondary" href="https://form.jotform.com/253035641475153" target="_blank" rel="noopener">
-              Prefiero que me contacten (formulario)
+              Prefiero que me contacten
             </a>
             <a class="btn secondary" href="/" rel="noopener">Volver a la landing</a>
           </div>
 
           <div class="note">
-            Aviso: Este sitio brinda información y soporte administrativo. No ofrece diagnóstico médico ni decisiones clínicas automatizadas.
+            Aviso: Este sitio proporciona información y apoyo administrativo. No ofrece diagnóstico médico ni decisiones clínicas automatizadas.
           </div>
         </div>
 
         <div class="card">
           <h3 style="margin:0 0 10px;">Enlaces rápidos</h3>
           <p style="margin:0;color:var(--muted);line-height:1.75;">
+            <a href="/agenda/">Agenda</a><br>
             <a href="/que-es-la-emt/">¿Qué es la EMT?</a><br>
             <a href="/como-funciona/">Cómo funciona</a><br>
             <a href="/beneficios/">Beneficios</a><br>
@@ -116,8 +244,9 @@
           <a href="/politica-de-privacidad">Privacidad</a>
         </div>
       </div>
+
     </div>
   </div>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
