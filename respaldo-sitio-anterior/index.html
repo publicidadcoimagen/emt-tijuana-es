@@ -1,0 +1,449 @@
+<!doctype html><html><head><link rel="icon" href="/respaldo-sitio-anterior/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/respaldo-sitio-anterior/assets/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="shortcut icon" href="/respaldo-sitio-anterior/assets/favicon.ico">
+
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clínica de Estimulación Magnética Transcraneal en Tijuana | Agenda tu cita</title>
+  <meta name="description" content="Clínica de Estimulación Magnética Transcraneal en Tijuana. Información y agendamiento. Agenda tu cita en minutos.">
+  <style>
+    :root{
+      --bg1:#070b18; --bg2:#0b2a5f;
+      --card:rgba(255,255,255,.07);
+      --border:rgba(255,255,255,.14);
+      --text:rgba(240,246,255,.92);
+      --muted:rgba(240,246,255,.72);
+      --brand:#4f8cff;
+      --brand2:#7dd3ff;
+      --ok:#58d68d;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(79,140,255,.35), transparent 60%),
+        radial-gradient(800px 520px at 85% 20%, rgba(125,211,255,.22), transparent 55%),
+        linear-gradient(140deg, var(--bg1), var(--bg2));
+      min-height:100vh;
+    }
+    a{color:var(--brand2); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding: clamp(24px, 5vw, 72px) clamp(16px, 4vw, 32px);
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+    }
+    .shell{
+      width:100%;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      overflow:hidden;
+    }
+
+    /* ===== NAV ===== */
+    .nav{
+      padding:14px 22px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.12);
+      backdrop-filter: blur(10px);
+    }
+    .nav-left{display:flex; align-items:center; gap:12px; min-width:0}
+    .logo{
+      width:44px; height:44px; border-radius:12px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(255,255,255,.06);
+      display:flex; align-items:center; justify-content:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .logo img{max-width:100%; max-height:100%; object-fit:contain}
+    .brandtxt{min-width:0}
+    .brandtxt .t{font-weight:900; letter-spacing:.2px; font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .brandtxt .s{color:var(--muted); font-size:12px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+    .nav-links{
+      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+      font-size:13px;
+    }
+    .nav-links a{
+      color:rgba(240,246,255,.86);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.10);
+      text-decoration:none;
+    }
+    .nav-links a:hover{background:rgba(0,0,0,.18)}
+    .nav-cta{
+      display:flex; align-items:center; gap:10px;
+    }
+    .nav-btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      color:var(--text);
+      text-decoration:none;
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .nav-btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#071021;
+      border:none;
+      box-shadow: 0 10px 30px rgba(79,140,255,.22);
+    }
+
+    .burger{
+      display:none;
+      width:42px; height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      color:rgba(240,246,255,.9);
+      font-size:18px;
+      line-height:1;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+    .mobile-menu{
+      display:none;
+      padding:10px 22px 18px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.10);
+    }
+    .mobile-menu a{
+      display:block;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.14);
+      color:rgba(240,246,255,.88);
+      text-decoration:none;
+      margin-top:10px;
+      font-weight:700;
+      font-size:14px;
+    }
+    .mobile-menu a.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#071021;
+      border:none;
+    }
+    @media (max-width: 980px){
+      .nav-links{display:none}
+      .nav-cta{display:none}
+      .burger{display:inline-flex}
+      .mobile-menu.open{display:block}
+    }
+
+    /* ===== HEADER (compact) ===== */
+    .topbar{
+      padding:18px 22px 10px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .pill{
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      border-radius:999px;
+      font-size:12px; color:var(--muted);
+      white-space:nowrap;
+    }
+    @media (max-width: 860px){ .pill{display:none} }
+
+    .hero{
+      padding:18px 22px 18px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+    }
+    @media (max-width: 1024px){ .hero{grid-template-columns:1fr} }
+
+    .hcard{
+      border:1px solid var(--border);
+      background:var(--card);
+      border-radius: var(--radius);
+      padding:20px;
+      overflow:hidden;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; color:rgba(240,246,255,.78);
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.18);
+      padding:6px 10px; border-radius:999px;
+      margin-bottom:10px;
+    }
+    .dot{width:8px; height:8px; border-radius:99px; background:var(--ok); box-shadow:0 0 0 4px rgba(88,214,141,.15);}
+
+    /* ✅ FIX móvil: títulos y texto responsivos + wrap */
+    .hcard h2{
+      margin:0 0 10px;
+      font-size: clamp(24px, 5.4vw, 32px);
+      line-height:1.12;
+      word-break: break-word;
+    }
+    .hcard p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.65;
+      word-break: break-word;
+    }
+
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.18);
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#071021;
+      border:none;
+      box-shadow: 0 10px 30px rgba(79,140,255,.25);
+    }
+    .btn.secondary{
+      background: rgba(0,0,0,.18);
+      color:var(--text);
+    }
+
+    /* ✅ FIX clave: en móvil los botones se apilan a 100% (evita “View” cortado) */
+    @media (max-width: 520px){
+      .cta{flex-direction:column}
+      .btn{width:100%; white-space:normal}
+    }
+
+    .note{font-size:12.5px; color:var(--muted); margin-top:10px}
+    .mini{display:grid; gap:10px; margin-top:12px;}
+    .mini .row{display:flex; gap:10px; align-items:flex-start; color:var(--muted); font-size:13px; line-height:1.5;}
+    .mini .badge{
+      flex:0 0 auto;
+      width:26px; height:26px; border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(0,0,0,.18);
+      color:rgba(240,246,255,.9);
+      font-weight:900;
+      font-size:12px;
+    }
+
+    .grid{
+      padding:0 22px 22px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
+    .card{
+      border:1px solid var(--border);
+      background:var(--card);
+      border-radius: var(--radius);
+      padding:18px;
+    }
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p, .card li{color:var(--muted); line-height:1.65}
+    .card ul{margin:10px 0 0; padding-left:18px}
+
+    .disclaimer{
+      padding:0 22px 22px;
+      color:rgba(240,246,255,.65);
+      font-size:12.5px;
+      line-height:1.6;
+    }
+
+    .footer{
+      padding:18px 22px;
+      border-top:1px solid rgba(255,255,255,.12);
+      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      color:rgba(240,246,255,.68);
+      font-size:13px;
+    }
+    .links{display:flex; gap:14px; flex-wrap:wrap}
+  </style>
+
+
+    
+<!-- BOTÓN LLAMAR -->
+<meta name="robots" content="noindex,nofollow"></head><body><a href="tel:+526646351809" onclick="gtag('event','click_call',{'event_category':'contact','event_label':'telefono'});" style="position:fixed; bottom:80px; left:20px; background:#0A84FF; color:white; padding:12px 16px; border-radius:50px; font-weight:bold; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.3); z-index:999;">
+Llamar
+</a>
+
+<!-- BOTÓN WHATSAPP -->
+<a href="https://wa.me/526644842328" target="_blank" onclick="gtag('event','click_whatsapp',{'event_category':'contact','event_label':'whatsapp'});" style="position:fixed; bottom:20px; left:20px; background:#25D366; color:white; padding:12px 16px; border-radius:50px; font-weight:bold; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.3); z-index:999;">
+WhatsApp
+</a>
+
+
+
+
+  <div class="wrap">
+    <div class="shell">
+
+      <!-- NAV + MENU -->
+      <div class="nav">
+        <div class="nav-left">
+          <div class="logo"><img src="/respaldo-sitio-anterior/assets/logotipoclinicaemt.jpg" alt="Clínica EMT Tijuana"></div>
+          <div class="brandtxt">
+            <div class="t">Clínica EMT Tijuana</div>
+            <div class="s">Landing + Directorio informativo</div>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <a href="/respaldo-sitio-anterior/que-es-la-emt/">¿Qué es?</a>
+          <a href="/respaldo-sitio-anterior/como-funciona/">Cómo funciona</a>
+          <a href="/respaldo-sitio-anterior/beneficios/">Beneficios</a>
+          <a href="/respaldo-sitio-anterior/preguntas-frecuentes/">FAQ</a>
+          <a href="/respaldo-sitio-anterior/ubicacion-horarios/">Ubicación</a>
+          <a href="/respaldo-sitio-anterior/politica-de-privacidad">Privacidad</a>
+          <a href="/respaldo-sitio-anterior/condiciones-de-servicio">Condiciones de servicio</a>
+          <a href="/respaldo-sitio-anterior/agenda/">Agenda</a>
+        </div>
+
+        <div class="nav-cta">
+          <a class="nav-btn" href="https://clinica-de-estimulacion--tlmuejr.gamma.site/" target="_blank" rel="noopener">Sitio completo</a>
+          <a class="nav-btn primary" href="/respaldo-sitio-anterior/agenda/" target="_blank" rel="noopener">Agendar</a>
+        </div>
+
+        <button class="burger" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+      </div>
+
+      <div id="mobileMenu" class="mobile-menu">
+        <a class="primary" href="/respaldo-sitio-anterior/agenda/" target="_blank" rel="noopener">Agendar / Solicitar información</a>
+        <a href="/respaldo-sitio-anterior/que-es-la-emt/">¿Qué es la EMT?</a>
+        <a href="/respaldo-sitio-anterior/como-funciona/">Cómo funciona</a>
+        <a href="/respaldo-sitio-anterior/beneficios/">Beneficios</a>
+        <a href="/respaldo-sitio-anterior/preguntas-frecuentes/">Preguntas frecuentes</a>
+        <a href="/respaldo-sitio-anterior/ubicacion-horarios/">Ubicación y horarios</a>
+        <a href="/respaldo-sitio-anterior/politica-de-privacidad">Política de Privacidad</a>
+        <a href="/respaldo-sitio-anterior/condiciones-de-servicio">Condiciones de servicio</a>
+        <a class="primary" href="/respaldo-sitio-anterior/agenda/">Agenda (Calendario)</a>
+        <a href="https://clinica-de-estimulacion--tlmuejr.gamma.site/" target="_blank" rel="noopener">Ver sitio completo</a>
+      </div>
+
+      <div class="topbar">
+        <div></div>
+        <div class="pill">No diagnósticos por WhatsApp · Canal informativo</div>
+      </div>
+
+      <div class="hero">
+        <div class="hcard">
+          <div class="kicker"><span class="dot"></span> Agenda tu cita en minutos</div>
+          <h2>Atención profesional, clara y sin fricción</h2>
+          <p>
+            Te ayudamos a <strong>agendar</strong>, <strong>confirmar</strong> y resolver dudas generales sobre nuestros servicios.
+            Este sitio no ofrece diagnóstico médico ni decisiones clínicas automatizadas.
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="/respaldo-sitio-anterior/agenda/" target="_blank" rel="noopener">
+              Agendar / Solicitar información
+            </a>
+            <a class="btn secondary" href="https://clinica-de-estimulacion--tlmuejr.gamma.site/" target="_blank" rel="noopener">
+              Ver sitio completo
+            </a>
+            <a class="btn secondary" href="/respaldo-sitio-anterior/politica-de-privacidad">Política de Privacidad</a>
+          </div>
+
+          <div class="mini">
+            <div class="row"><div class="badge">1</div><div>Envías tu solicitud (2–3 minutos).</div></div>
+            <div class="row"><div class="badge">2</div><div>Te contactamos para coordinar horarios y resolver dudas.</div></div>
+            <div class="row"><div class="badge">3</div><div>Confirmamos tu cita y te damos seguimiento administrativo.</div></div>
+          </div>
+
+          <div class="note">
+            Al enviar el formulario aceptas nuestra <a href="/respaldo-sitio-anterior/politica-de-privacidad">Política de Privacidad</a> y el contacto por WhatsApp con fines informativos y administrativos.
+          </div>
+        </div>
+
+        <div class="hcard">
+          <h3 style="margin:0 0 10px;">Contacto</h3>
+          <p style="margin:0 0 10px;">
+            Correo: <strong>info@estimulacionmagneticatranscranealtijuana.com</strong><br>
+            Ubicación: <span style="color:var(--muted);">Tijuana, BC</span>
+          </p>
+          <p style="margin:0; font-size:13px; color:var(--muted);">
+            Si ya eres paciente, también puedes usar el formulario para confirmar o reprogramar.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Qué hacemos</h3>
+          <ul>
+            <li>Información general sobre nuestros servicios</li>
+            <li>Agendamiento, confirmaciones y recordatorios</li>
+            <li>Seguimiento administrativo</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Para quién es útil</h3>
+          <p>
+            Para personas que buscan <strong>orientación inicial</strong> y desean conocer el proceso de atención y agendamiento.
+            La evaluación clínica se realiza únicamente en consulta.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Confianza y transparencia</h3>
+          <p>
+            • Consentimiento de contacto<br>
+            • Manejo responsable de datos<br>
+            • <a href="/respaldo-sitio-anterior/politica-de-privacidad">Política de Privacidad</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Aviso:</strong> La información en este sitio es únicamente informativa. No sustituye una consulta médica.
+        En caso de urgencia, acude a servicios de emergencia.
+      </div>
+
+      <div class="footer">
+        <div>© <span id="y"></span> Clínica EMT Tijuana</div>
+        <div class="links">
+          <a href="/respaldo-sitio-anterior/que-es-la-emt/">¿Qué es?</a>
+          <a href="/respaldo-sitio-anterior/como-funciona/">Cómo funciona</a>
+          <a href="/respaldo-sitio-anterior/beneficios/">Beneficios</a>
+          <a href="/respaldo-sitio-anterior/preguntas-frecuentes/">FAQ</a>
+          <a href="/respaldo-sitio-anterior/ubicacion-horarios/">Ubicación</a>
+          <a href="/respaldo-sitio-anterior/politica-de-privacidad">Privacidad</a>
+          <a href="/respaldo-sitio-anterior/condiciones-de-servicio">Condiciones de servicio</a>
+          <a href="/respaldo-sitio-anterior/agenda/">Agenda</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<img src="https://tracker.metricool.com/c3po.jpg?hash=82114ea00ca5c13713cc9ccd5bf17d16">
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function toggleMenu(){
+      var el = document.getElementById('mobileMenu');
+      el.classList.toggle('open');
+    }
+  </script>
+
+
+</body></html>
