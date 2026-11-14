@@ -1,4 +1,4 @@
-# Clínica EMT Tijuana · Sitio español v2
+# Terapia EMT Tijuana · Sitio español v2
 
 Copia independiente del sitio español, con diseño aprobado y citas por teléfono: +52 664 635 1809.
 
@@ -13,7 +13,7 @@ HTML estático sin compilación. Publicar la raíz del repositorio. Conserva CNA
 - El código registra clics solo si gtag o dataLayer ya están disponibles; esto no verifica medición ni conversiones reales.
 
 ## Alcance
-Todas las páginas comparten el diseño nuevo. Contenido informativo, blog y textos legales conservados. La agenda es telefónica; los enlaces históricos de solicitud en el blog se conservan para revisión. Revisar contenido clínico y legal antes de publicar. SEO/AEO no garantiza posiciones ni leads.
+Todas las páginas comparten el diseño nuevo. Contenido informativo, blog y textos legales conservados. La agenda es telefónica; los enlaces históricos de solicitud en el blog se conservan para revisión. Revisar contenido médico y legal antes de publicar. SEO/AEO no garantiza posiciones ni leads.
 
 
 ## Reglas de revisión de Camila
